@@ -26,6 +26,7 @@ public class MainActivity extends FragmentActivity {
      */
     SectionsPagerAdapter mSectionsPagerAdapter;
 
+    
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -40,6 +41,7 @@ public class MainActivity extends FragmentActivity {
         // primary sections of the app.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
+        //test
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
