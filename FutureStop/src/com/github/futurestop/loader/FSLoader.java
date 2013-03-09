@@ -6,23 +6,25 @@ package com.github.futurestop.loader;
 import android.content.Context;
 import android.support.v4.content.AsyncTaskLoader;
 
-import com.github.futurestop.model.FSModel;
+import com.github.futurestop.model.FSResult;
+import com.github.futurestop.request.FSRequest;
 
 /**
  * @author Chung-Yi Cho
  *
  */
-public class FSLoader<T> extends AsyncTaskLoader<FSModel<T>> {
+public class FSLoader extends AsyncTaskLoader<FSResult> {
 
-    private FSModel<T> mData;
-
+    private FSResult mData;
+    public FSRequest mRequest;
+    
     public FSLoader(Context context) {
         super(context);
     }
 
     @Override
-    public FSModel<T> loadInBackground() {
-        return null;
+    public FSResult loadInBackground() {
+        return mRequest.builder.execute(mRequest);
     }
     
     /**
@@ -31,7 +33,7 @@ public class FSLoader<T> extends AsyncTaskLoader<FSModel<T>> {
      * here just adds a little more logic.
      */
     @Override 
-    public void deliverResult(FSModel<T> data) {
+    public void deliverResult(FSResult data) {
         if (isReset()) {
             // An async query came in while the loader is stopped.  We
             // don't need the result.
@@ -40,7 +42,7 @@ public class FSLoader<T> extends AsyncTaskLoader<FSModel<T>> {
             }
         }
         
-        FSModel<T> oldData = data;
+        FSResult oldData = data;
         mData = data;
 
         if (isStarted()) {
@@ -85,7 +87,7 @@ public class FSLoader<T> extends AsyncTaskLoader<FSModel<T>> {
     /**
      * Handles a request to cancel a load.
      */
-    @Override public void onCanceled(FSModel<T> data) {
+    @Override public void onCanceled(FSResult data) {
         super.onCanceled(data);
 
         // At this point we can release the resources associated with 'apps'
@@ -114,7 +116,7 @@ public class FSLoader<T> extends AsyncTaskLoader<FSModel<T>> {
      * Helper function to take care of releasing resources associated
      * with an actively loaded data set.
      */
-    protected void onReleaseResources(FSModel<T> data) {
+    protected void onReleaseResources(FSResult data) {
 
     }
 
