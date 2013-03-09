@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 /**
  * @author Chung-Yi Cho
- *
+ * Test
  */
 public class HomeActivity extends FragmentActivity {
     protected void onCreate(android.os.Bundle savedInstanceState) {
