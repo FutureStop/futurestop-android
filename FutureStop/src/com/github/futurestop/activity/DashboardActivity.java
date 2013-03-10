@@ -8,9 +8,9 @@ import android.widget.TextView;
 
 /**
  * @author Chung-Yi Cho
- * Test
+ * 
  */
-public class HomeActivity extends FragmentActivity {
+public class DashboardActivity extends FragmentActivity {
     protected void onCreate(android.os.Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TextView tv = new TextView(this);
