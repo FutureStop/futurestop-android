@@ -14,7 +14,7 @@ public class DashboardActivity extends FragmentActivity {
 	protected void onCreate(android.os.Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		TextView tv = new TextView(this);
-		tv.setText("Hello Home Activity");
+		tv.setText("Hello Home Activity, hi");
 		setContentView(tv);
 	}
 }
