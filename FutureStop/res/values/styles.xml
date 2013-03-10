@@ -17,4 +17,38 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="dashboard_imageview">
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+    </style>
+
+    <style name="dashboard_text_block">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="dashboard_main_text" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:textSize">26sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="dashboard_divider">
+        <item name="android:background">#C7C7C7</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_columnSpan">2</item>
+    </style>
+
+    <style name="dashboard_rider_image">
+        <item name="android:contentDescription">@string/rider_image</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
 </resources>
