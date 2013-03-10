@@ -13,9 +13,9 @@ import com.github.futurestop.request.FSRequest;
  * @author Chung-Yi Cho
  *
  */
-public class FSLoader extends AsyncTaskLoader<FSResult> {
+public class FSLoader extends AsyncTaskLoader<FSResult<String>> {
 
-    private FSResult mData;
+    private FSResult<String> mData;
     public FSRequest mRequest;
     
     public FSLoader(Context context) {
@@ -23,7 +23,7 @@ public class FSLoader extends AsyncTaskLoader<FSResult> {
     }
 
     @Override
-    public FSResult loadInBackground() {
+    public FSResult<String> loadInBackground() {
         return mRequest.builder.execute(mRequest);
     }
     
@@ -33,7 +33,7 @@ public class FSLoader extends AsyncTaskLoader<FSResult> {
      * here just adds a little more logic.
      */
     @Override 
-    public void deliverResult(FSResult data) {
+    public void deliverResult(FSResult<String> data) {
         if (isReset()) {
             // An async query came in while the loader is stopped.  We
             // don't need the result.
