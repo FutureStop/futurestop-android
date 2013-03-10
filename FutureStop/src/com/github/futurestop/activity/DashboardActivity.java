@@ -11,12 +11,10 @@ import android.widget.TextView;
  * 
  */
 public class DashboardActivity extends FragmentActivity {
-    protected void onCreate(android.os.Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        TextView tv = new TextView(this);
-        tv.setText("Hello Home Activity");
-        setContentView(tv);
-    };
-    
-    
+	protected void onCreate(android.os.Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		TextView tv = new TextView(this);
+		tv.setText("Hello Home Activity");
+		setContentView(tv);
+	}
 }
