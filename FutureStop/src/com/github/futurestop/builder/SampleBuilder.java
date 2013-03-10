@@ -19,7 +19,6 @@ public class SampleBuilder implements IBuilder {
         Gson gson = new Gson();
         String str = gson.fromJson(gson.toJson("Hello Sample Builder"), String.class);
         
-        //dd
         FSResult<String> result = new FSResult<String>();
         result.data = str;
         
